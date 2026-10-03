@@ -147,3 +147,16 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Backups com dados do cliente
+backups/
+
+# Lixo do Windows
+Thumbs.db
+desktop.ini
