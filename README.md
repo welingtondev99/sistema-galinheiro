@@ -52,10 +52,10 @@ Um arquivo `.env.example`, só com os nomes e sem os valores, pode ser enviado a
 
 ## Etapas do projeto
 
-- [ ] Etapa 0: preparar o ambiente
+- [x] Etapa 0: preparar o ambiente
 - [ ] Etapa 1: banco de dados (SQL)
 - [ ] Etapa 2: telas e navegação
-- [ ] Etapa 3: login
+- [x] Etapa 3: login
 - [ ] Etapa 4: lotes
 - [ ] Etapa 5: primeiro backup (Python)
 - [ ] Etapa 6: pesagem
