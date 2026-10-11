@@ -1,11 +1,12 @@
-import './App.css'
-import { useEffect ,useState } from 'react'
-import supabase from './lib/conectionSupabase'
+import Login from "./pages/Login"
+import Register from "./pages/Register"
 
 
 function App() {
   return (
-    console.log(supabase)
+    <>
+     <Login/>
+    </>
   )
   
 }
