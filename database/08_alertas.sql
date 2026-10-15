@@ -14,18 +14,19 @@ cross join (
     and data_movimento >= current_date - 7
 ) c;
 
---2) vacinas: reforcos atrasados ou que vencem nos proximos 7 dias
-create view vacinas_alerta with (security_invoker = true) as select
-v.id,
-i.nome as lote,
-v.nome_vacina,
-v.proximo_dose,
-v.proxima_dose -  current_date as dias_para_vencer
+-- 2) Vacinas: reforços atrasados ou que vencem nos próximos 7 dias
+create view vacinas_a_vencer with (security_invoker = true) as
+select
+  v.id,
+  l.nome as lote,
+  v.nome_vacina,
+  v.proxima_dose,
+  v.proxima_dose - current_date as dias_para_vencer
 from vacinas v
-join insumos i on v.id_insumo = i.id
-where v.proximo_dose is not null
-and v.proximo_dose <= current_date + 7
-order by v.proximo_dose;
+join lotes l on l.id = v.lote_id
+where v.proxima_dose is not null
+  and v.proxima_dose <= current_date + 7
+order by v.proxima_dose;
 
 -- 3) Postura: % de ovos por ave viva, por lote e por dia
 create view postura_diaria with (security_invoker = true) as
