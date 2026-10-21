@@ -2,6 +2,18 @@
 
 @import "tailwindcss";
 
+body{
+    background-color: var(--color-background);
+}
+
+p, label{
+  color: var(--color-text-muted);
+}
+
+h3{
+  color: var(--color-text)
+}
+
 @theme {
   /* Tipografia */
   --font-sans: "Inter", sans-serif;
@@ -17,7 +29,7 @@
   --color-border: #E2E4D9;
 
   /* Texto */
-  --color-text: #252A20;
+  --color-text: #5f7650;
   --color-text-muted: #6B7263;
 
   /* Estados */

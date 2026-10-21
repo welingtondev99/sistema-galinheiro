@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import ButtonLogin from '../components/ButtonLogin'
 import supabase from "../lib/conectionSupabase";
 import InputPassword from '../components/InputPassword'
 import { useNavigate } from 'react-router-dom';
+import ProtectedRoute from './dashboard/ProtectedRoute';
 
 const Login = () => {
     const [email, setEmail] = useState('')
@@ -28,7 +29,7 @@ const Login = () => {
         setMensagem("E-mail ou senha incorretos.");
         return;
       }
-      navigate('/recuperar-senha')
+      navigate('/primeiro-acesso')
     }
 
     const regex =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -36,6 +37,7 @@ const Login = () => {
     const isFormValid = 
         password.length > 5 &&
         regex.test(email) == true
+        
 
   return (
     <main className="min-h-screen bg-(--color-background) flex items-center justify-center p-4 font-inter">
